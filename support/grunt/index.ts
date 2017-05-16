@@ -26,6 +26,7 @@ export = function (grunt: IGrunt) {
 	]);
 
 	grunt.registerTask('cd', [
+		'prebuild',
 		'sync:gh-pages',
 		'clean:repo',
 		'copy:slides',
