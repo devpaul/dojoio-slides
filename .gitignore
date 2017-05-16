@@ -4,3 +4,5 @@ node_modules
 *.iml
 .idea/
 /.grunt/
+/.sync
+deploy_key*

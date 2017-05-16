@@ -8,12 +8,18 @@
     "install": "bower install"
   },
   "devDependencies": {
+    "@types/grunt": "^0.4.21",
     "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-devserver": "^0.6.0",
+    "grunt-dojo2-extras": "dojo/grunt-dojo2-extras#latest",
     "grunt-gh-pages": "^2.0.0",
+    "grunt-prompt": "^1.3.3",
+    "load-grunt-tasks": "^3.5.2",
+    "ts-node": "^3.0.4",
     "webserv": "^0.7.0"
   },
   "dependencies": {
