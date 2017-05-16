@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>TypeScript Development Workflow</title>
+
+    <meta name="description" content="TypeScript Development Workflow">
+    <meta name="author" content="Paul Shannon">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="bower_components/reveal.js/css/theme/sky.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="resources/main.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'bower_components/reveal.js/css/print/pdf.css' : 'bower_components/reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+			<h2>Continuous Delivery</h2>
+			<h2>in Open Source</h2>
+        </section>
+
+		<section>
+			<h2>Hello!</h2>
+
+			<div class="two-column">
+				<div>
+					<h3>Paul Shannon</h3>
+					<img src="./images/sitepen.png" class="removeFormatting">
+				</div>
+				<div>
+					<ul>
+						<li>Sr Engineer @ SitePen</li>
+						<li>Co-maintainer of Intern</li>
+						<li>SitePen Podcast</li>
+						<li>Phoenix TypeScript</li>
+						<li class="github no-style"><a href="https://github.com/devpaul">devpaul</a></li>
+						<li class="twitter no-style"><a href="https://twitter.com/developerPaul">@developerPaul</a></li>
+					</ul>
+				</div>
+			</div>
+			<aside class="notes">
+				TODO add images to intern, podcast, phxts, github, twitter
+			</aside>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" data-state="dojo-slide">
+			<div class="tall center-column-flex">
+				<img src="./images/dragon2.svg" class="removeFormatting">
+				<h2>Dojo 2</h2>
+			</div>
+			<div class="fragment absolute-center translucent-black-bg">
+				<p>Dojo 2 is a complete rewrite of the popular JavaScript toolkit
+					released in 2004.</p>
+
+				<ul>
+					<li><a href="https://github.com/dojo/meta#packages">12+ Repositories</a></li>
+					<li>Enterprise framework</li>
+					<li>Reactive programming</li>
+					<li>using TypeScript</li>
+				</ul>
+			</div>
+		</section>
+
+		<section data-state="dojotoolkit-slide">
+			<h2>dojotoolkit.org</h2>
+
+			<img src="../images/dojotoolkit.png">
+
+			<aside class="notes">
+				TODO get an image of the current site and use it as a background
+			</aside>
+		</section>
+
+		<section>
+			<h2>issues</h2>
+
+			<ul>
+				<li>Not frequently deployed</li>
+				<li>Difficult to update</li>
+				<li>various tools used to update the site</li>
+				<li>no automated testing</li>
+			</ul>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h1>Dojo.io</h1>
+			<h4 class="sub-title">A New Hope</h4>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h2>dojo.io content</h2>
+
+			<ul>
+				<li>Blog</li>
+				<li>API Docs</li>
+				<li>Tutorials</li>
+			</ul>
+
+			<p class="fragment">Most important was removing barriers that prevented content being updated
+				regularly</p>
+
+			<aside class="notes">
+				TODO make a slide out of each of these content goals
+				With an image of the content
+			</aside>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h2>Continuous Delivery</h2>
+
+			<p>A practice where software is produced in short cycles that may be released at any time</p>
+
+			<img class="fragment" src="./images/autofetch.gif">
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h2>Continuous Delivery features</h2>
+
+			<ul>
+				<li>automation</li>
+				<li>builds</li>
+				<li>tests</li>
+				<li>approvals</li>
+				<li>deployment</li>
+			</ul>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h1>Building the Site</h1>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<div class="two-column medium">
+				<div>
+					<img src="../images/hexo.svg">
+					<footer>Build</footer>
+				</div>
+				<div>
+					<h1>Hexo</h1>
+					<p>Static site builder</p>
+
+					<ul>
+						<li>Supports blogs</li>
+						<li>Written in JavaScript</li>
+						<li>Highly extensible</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<div class="two-column medium">
+				<div>
+					<img src="../images/grunt.svg">
+					<footer>Automate</footer>
+				</div>
+				<div>
+					<h1>Grunt</h1>
+					<p>Build Tool</p>
+					<ul>
+						<li>Written in JavaScript</li>
+						<li>Familiar to the team</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<div class="two-column medium">
+				<div>
+					<img src="../images/intern.png" class="medium">
+					<footer>Test</footer>
+				</div>
+				<div>
+					<h1>Intern</h1>
+					<p>Testing Framework</p>
+					<ul>
+						<li>Written in JavaScript</li>
+						<li>Capable of handling any testing scenario</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<div class="two-column medium">
+				<div>
+					<img src="./images/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png" class="medium">
+					<footer>Approve</footer>
+				</div>
+				<div>
+					<h1>GitHub</h1>
+					<p>Git Repository & Host</p>
+					<ul>
+						<li>Git Repository</li>
+						<li>Code Review</li>
+						<li>GitHub Pages</li>
+						<li>Rich API</li>
+						<li>WebHooks and Integration</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<div class="two-column medium">
+				<div>
+					<img src="./images/travis.svg" class="medium">
+					<footer>Deploy</footer>
+				</div>
+				<div>
+					<h2>Travis CI</h2>
+					<p>Continuous Integration</p>
+					<ul>
+						<li>Easy to Configure</li>
+						<li>Simple UI</li>
+						<li>GitHub Integration</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h3>Content Pipeline</h3>
+
+			<div class="pipeline">
+				<p class="fragment"><img class="inverse-gh small" src="./images/GitHub-Mark/PNG/GitHub-Mark-32px.png"> PR is created</p>
+				<p class="fragment"><img class="removeFormatting small" src="./images/travis.svg"> Travis starts a build</p>
+				<p class="fragment"><img class="removeFormatting small" src="./images/tslint.svg"> tslint checks examples</p>
+				<p class="fragment"><img class="removeFormatting small" src="./images/typescript.png"> TypeScript compiles examples</p>
+				<p class="fragment"><img class="removeFormatting small" src="./images/intern.png"> Intern runs unit tests</p>
+				<p class="fragment"><img class="removeFormatting small" src="./images/hexo.svg"> Hexo builds static site</p>
+				<p class="fragment"><img class="removeFormatting small" src="./images/intern.png"> Intern runs functional tests</p>
+				<p class="fragment"><img class="removeFormatting small" src="./images/travis.svg"> GitHub informed on test result</p>
+				<p class="fragment"><img class="inverse-gh small" src="./images/GitHub-Mark/PNG/GitHub-Mark-32px.png"> A human reviews the PR</p>
+				<p class="fragment"><img class="inverse-gh small" src="./images/GitHub-Mark/PNG/GitHub-Mark-32px.png"> PR is merged to master</p>
+				<p class="fragment"><img class="removeFormatting small" src="./images/travis.svg"> Travis starts a build</p>
+				<p class="fragment"><img class="removeFormatting small" src="./images/grunt.svg"> commit to gh-pages branch</p>
+				<p class="fragment"><img class="inverse-gh small" src="./images/GitHub-Mark/PNG/GitHub-Mark-32px.png"> GitHub publishes dojo.io</p>
+			</div>
+
+			<aside class="notes">
+				<a href="https://github.com/dojo/dojo.io">GitHub Repository</a>
+				<a href="https://travis-ci.org/dojo/dojo.io">Travis Builds</a>
+			</aside>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h1>There were issues...</h1>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h2>Git & Travis</h2>
+
+			<p>The Travis environment is not the same as a developer machine</p>
+
+			<ul>
+				<li class="fragment">GitHub requires user.name and user.email</li>
+				<li class="fragment">Travis clones with https</li>
+			</ul>
+
+			<aside class="notes">
+				<ul>
+					<li>We tested in Docker to recreate a clean environment</li>
+					<li>Added checks in our scripts to ensure a git configuration</li>
+					<li>Updated our scripts to work without credentials</li>
+				</ul>
+			</aside>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h2>Credential Management</h2>
+
+			<p>Travis does not do credential management</p>
+
+			<ul>
+				<li class="fragment">GitHub needs a deployment key</li>
+				<li class="fragment">Travis allows for secret environment variables on master</li>
+			</ul>
+
+			<aside class="notes">
+				<ul>
+					<li>We encrypted a deployment key using openssl</li>
+					<li>We wrote a script to automate setting up an encrypted deployment key</li>
+				</ul>
+				<em>Show credential management in GH & Travis</em>
+			</aside>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h2>API Documentation</h2>
+
+			<p>The Dojo package release cycle is independent from the dojo.io site</p>
+
+			<ul>
+				<li class="fragment">Travis doesn't support upstream/downstream builds</li>
+				<li class="fragment">Travis allows for secret environment variables on master</li>
+				<li class="fragment">Dojo packages build their API docs</li>
+			</ul>
+
+			<aside class="notes">
+				<ul>
+					<li>We used a cron to trigger a API doc build</li>
+					<li>The API build queries the GitHub API and looks for new releases</li>
+				</ul>
+				<em>Show cron in Travis</em>
+			</aside>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h2>GitHub API Calls</h2>
+
+			<p>GitHub API calls are limited to 60 calls per hour from anonymous sources</p>
+
+			<ul>
+				<li class="fragment">Travis reuses IP addresses and build machines</li>
+				<li class="fragment">API Documentation builds failed intermittently on Travis</li>
+			</ul>
+
+			<aside class="notes">
+				<ul>
+					<li>We added an environment variable with OAuth GitHub credentials</li>
+					<li>We wrote a script to automate that as well</li>
+				</ul>
+				<em>Show cron in Travis</em>
+			</aside>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h2>GitHub Pages</h2>
+
+			<p>GitHub Pages doesn't support https for custom domains</p>
+
+			<aside class="notes">
+				<p>We used CloudFlare to CDN the site and provide https</p>
+			</aside>
+		</section>
+
+		<section data-background-image="./images/bg.jpg" class="dojo">
+			<h1>Questions?</h1>
+		</section>
+
+		<section>
+			<h3>Get Involved</h3>
+
+			<ul>
+				<li><a href="https://github.com/dojo/meta">Dojo 2</a></li>
+				<li><a href="https://dojo.io/">Dojo.io</a></li>
+				<li><a href="https://theintern.github.io/">Intern</a></li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Phoenix TypeScript</h2>
+
+			<div class="two-column">
+				<div>
+					<h4><a href="https://www.meetup.com/Phoenix-TypeScript/events/239757620/">June Meetup</a></h4>
+
+					<p>Getting Started with TypeScript</p>
+
+					<img class="removeFormatting" src="./images/phxts.jpg">
+				</div>
+
+				<div>
+					<p>June 13 @ DriveTime</p>
+
+					<ul>
+						<li>30 minutes presentation</li>
+						<li>Questions & Answer</li>
+						<li>1 hour open code session</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="two-column">
+				<div>
+					<div>
+						<h3>Paul Shannon</h3>
+					</div>
+					<ul>
+						<li>SitePen Podcast</li>
+						<li><a href="https://www.meetup.com/Phoenix-TypeScript/">Phoenix TypeScript</a></li>
+						<li class="github no-style"><a href="https://github.com/devpaul">devpaul</a></li>
+						<li class="twitter no-style"><a href="https://twitter.com/developerPaul">@developerPaul</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+    </div>
+</div>
+
+<script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+<script src="bower_components/reveal.js/js/reveal.js"></script>
+<script src="src/index.js"></script>
+
+</body>
+</html>
