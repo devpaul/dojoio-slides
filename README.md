@@ -1,5 +1,7 @@
 # Dojo.io: Continuous Delivery in Open Source
 
+[![Build Status](https://travis-ci.org/devpaul/dojoio-slides.svg?branch=master)](https://travis-ci.org/devpaul/dojoio-slides)
+
 Created by Paul Shannon [@developerPaul](https://twitter.com/developerPaul).
 
 ## Quick Start
